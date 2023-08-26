@@ -4,9 +4,13 @@ import { initStore } from "../utils/store-utils.js";
 const db = initStore("readings");
 
 export const reading = {
-  async getAllreadings() {
+  async getAllReadings(station_id=null) {
     await db.read();
-    return db.data.readings;
+    const readings=db.data.readings
+    if (station_id){
+      return readings.filter(reading => reading.station_id===station_id)
+    }
+    return readings;
   },
 
   async addReading(reading) {

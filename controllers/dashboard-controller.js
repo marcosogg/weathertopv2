@@ -19,6 +19,15 @@ export const dashboardController = {
     const _station = await station.addStation(newStation);
         response.redirect("/dashboard");
   }, 
+  async addReadingForm(request, response){
+    const station_id=request.params.stationId
+    const viewData = {
+      title: "Add Reading",
+      readings: await reading.getAllReadings(station_id),
+      station_id
+    };
+    response.render("form-reading", viewData);
+  },
   async addReading(request, response) {
     const station_id = request.body.station_id
       const newReading = {
@@ -29,6 +38,10 @@ export const dashboardController = {
         station_id: station_id
       };
       await reading.addReading(newReading);
+      const viewData = {
+        title: "Station Dashboard",
+        stations: await station.getAllStations(),
+      };
       response.render("dashboard-view", viewData);
   }
 };

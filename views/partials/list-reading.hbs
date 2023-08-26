@@ -1,0 +1,25 @@
+
+<div class="box box-link-hover-shadow">
+<table>
+		<thead>
+			<tr>
+				<th>Code</th>
+				<th>Temperature</th>
+				<th>Wind Speed</th>
+				<th>Wind</th>
+                <th>Pressure</th>
+			</tr>
+		</thead>
+		<tbody>
+            {{#each readings}}
+			<tr>
+				<td>{{code}}</td>
+				<td>{{temperature}}</td>
+				<td>{{windSpeed}}</td>
+				<td>0</td>
+                <td>{{pressure}}</td>
+			</tr>
+            {{/each}}
+		</tbody>
+	</table>
+</div>
