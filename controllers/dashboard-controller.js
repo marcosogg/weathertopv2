@@ -20,10 +20,27 @@ export const dashboardController = {
         response.redirect("/dashboard");
   }, 
   async addReadingForm(request, response){
-    const station_id=request.params.stationId
+    const station_id = request.params.stationId
+    let readings = await reading.getAllReadings(station_id)
+    readings = readings.map((item) => {
+      switch (item.code) {
+        case 100:
+          item.codeText = 'Texto aqui';
+          break;
+        case 200:
+          item.codeText = 'Texto aqui';
+          break;
+        default:
+          // Do nothing
+      }
+      return item;
+    })
+    readings.reverse()
     const viewData = {
       title: "Add Reading",
-      readings: await reading.getAllReadings(station_id),
+      readings: readings.slice(1),
+      last_reading: readings[0],
+      station: await station.getStationById(station_id),
       station_id
     };
     response.render("form-reading", viewData);
@@ -32,7 +49,6 @@ export const dashboardController = {
     const station_id = request.body.station_id
       const newReading = {
         code:parseInt(request.body.code),
-         
         temperature:parseFloat(request.body.temperature),
         windSpeed:parseFloat(request.body.windSpeed),
         windDirection:parseFloat(request.body.windDirection),

@@ -10,7 +10,18 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
 app.use(fileUpload());
-app.engine(".hbs", engine({ extname: ".hbs" }));
+app.engine('hbs', engine({
+  extname: '.hbs',
+  helpers: {
+    switch(value, cases) {
+      for (const [key, block] of Object.entries(cases)) {
+        if (value === key) {
+          return block;
+        }
+      }
+      return '';
+    }
+  }}));
 app.set("view engine", ".hbs");
 app.set("views", "./views");
 app.use("/", router);

@@ -3,14 +3,14 @@
   "readings": [
     {
       "_id": "5d7a8e4b0f25a715f9e445d6",
-      "code": 800,
+      "code": 100,
       "temperature": 0.5,
       "windSpeed": 3.5,
       "pressure": 1002,
       "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c"
     },
     {
-      "code": 900,
+      "code": 200,
       "temperature": 78,
       "windSpeed": 100,
       "windDirection": 12,
@@ -28,13 +28,22 @@
       "_id": "a508b885-b3b6-452b-9648-1f0282a0486e"
     },
     {
-      "code": 900,
+      "code": 200,
       "temperature": 78,
       "windSpeed": 100,
       "windDirection": 12,
       "pressure": 12,
       "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
       "_id": "f686eff1-79de-4d92-ac86-56d2cb61622b"
+    },
+    {
+      "code": 100,
+      "temperature": 0,
+      "windSpeed": 1,
+      "windDirection": 2,
+      "pressure": 3,
+      "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
+      "_id": "8e1da060-a8bb-4340-ab7c-7df51e57fd6e"
     }
   ]
 }

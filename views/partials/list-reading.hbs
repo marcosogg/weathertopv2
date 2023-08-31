@@ -28,7 +28,15 @@
         background-color: #ddd;
     }
 </style>
-
+<ul>
+    <li>{{station.title}}</li>
+    <li>
+    {{last_reading.codeText}}
+    </li>
+    <li>{{last_reading.windSpeed}}</li>
+    <li>{{last_reading.windDirection}}</li>
+    <li>{{last_reading.pressure}}</li>
+</ul>
 <div class="table-container">
     <table class="weather-table">
         <thead>
