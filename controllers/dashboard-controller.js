@@ -32,8 +32,10 @@ export const dashboardController = {
     const station_id = request.body.station_id
       const newReading = {
         code:parseInt(request.body.code),
+         
         temperature:parseFloat(request.body.temperature),
         windSpeed:parseFloat(request.body.windSpeed),
+        windDirection:parseFloat(request.body.windDirection),
         pressure:parseFloat (request.body.pressure),
         station_id: station_id
       };

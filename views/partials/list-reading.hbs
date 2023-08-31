@@ -1,25 +1,55 @@
+<style>
+    .table-container {
+        overflow-x: auto;
+    }
 
-<div class="box box-link-hover-shadow">
-<table>
-		<thead>
-			<tr>
-				<th>Code</th>
-				<th>Temperature</th>
-				<th>Wind Speed</th>
-				<th>Wind</th>
-                <th>Pressure</th>
-			</tr>
-		</thead>
-		<tbody>
+    .weather-table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .weather-table th,
+    .weather-table td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    .weather-table th {
+        background-color: #f2f2f2;
+    }
+
+    .weather-table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .weather-table tbody tr:hover {
+        background-color: #ddd;
+    }
+</style>
+
+<div class="table-container">
+    <table class="weather-table">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Temperature (°C)</th>
+                <th>Wind Speed (km/h)</th>
+                <th>Wind Direction</th>
+                <th>Pressure (hPa)</th>
+            </tr>
+        </thead>
+        <tbody>
             {{#each readings}}
-			<tr>
-				<td>{{code}}</td>
-				<td>{{temperature}}</td>
-				<td>{{windSpeed}}</td>
-				<td>0</td>
+            <tr>
+                <td>{{code}}</td>
+                <td>{{temperature}}</td>
+                <td>{{windSpeed}}</td>
+                <td>{{windDirection}}</td>
                 <td>{{pressure}}</td>
-			</tr>
+            </tr>
             {{/each}}
-		</tbody>
-	</table>
+        </tbody>
+    </table>
 </div>
