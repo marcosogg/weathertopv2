@@ -2,48 +2,40 @@
   "file": "./models/readings.json",
   "readings": [
     {
-      "_id": "5d7a8e4b0f25a715f9e445d6",
       "code": 100,
-      "temperature": 0.5,
-      "windSpeed": 3.5,
-      "pressure": 1002,
-      "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c"
-    },
-    {
-      "code": 200,
-      "temperature": 78,
-      "windSpeed": 100,
-      "windDirection": 12,
-      "pressure": 33,
-      "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
-      "_id": "6b19cd92-e966-49ba-abbd-ee4194e86382"
-    },
-    {
-      "code": 100,
-      "temperature": 0,
-      "windSpeed": 0,
-      "windDirection": 0,
-      "pressure": 0,
-      "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
-      "_id": "a508b885-b3b6-452b-9648-1f0282a0486e"
-    },
-    {
-      "code": 200,
-      "temperature": 78,
-      "windSpeed": 100,
-      "windDirection": 12,
-      "pressure": 12,
-      "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
-      "_id": "f686eff1-79de-4d92-ac86-56d2cb61622b"
-    },
-    {
-      "code": 100,
-      "temperature": 0,
+      "temperature": 40,
       "windSpeed": 1,
       "windDirection": 2,
       "pressure": 3,
       "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
-      "_id": "8e1da060-a8bb-4340-ab7c-7df51e57fd6e"
+      "_id": "c0f56792-4dd5-44fc-b049-ab464e0cd832"
+    },
+    {
+      "code": 100,
+      "temperature": 40,
+      "windSpeed": 1,
+      "windDirection": 2,
+      "pressure": 3,
+      "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
+      "_id": "c0f56792-4dd5-44fc-b049-ab464e0cd832"
+    },
+    {
+      "code": 800,
+      "temperature": 12,
+      "windSpeed": 12,
+      "windDirection": 12,
+      "pressure": 12,
+      "station_id": "b52ef808-8cbd-45d3-926e-321818112a43",
+      "_id": "2193f828-6fdd-4841-a309-231ba6fa3d01"
+    },
+    {
+      "code": 500,
+      "temperature": 2,
+      "windSpeed": 3,
+      "windDirection": 2,
+      "pressure": 2,
+      "station_id": "aa0aedae-b456-4b11-b94b-83583a5be6d0",
+      "_id": "435af8c3-f5db-44bc-b530-c8a3653a1d4b"
     }
   ]
 }
