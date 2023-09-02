@@ -11,31 +11,58 @@
       "_id": "c0f56792-4dd5-44fc-b049-ab464e0cd832"
     },
     {
-      "code": 100,
-      "temperature": 40,
-      "windSpeed": 1,
-      "windDirection": 2,
-      "pressure": 3,
+      "code": 300,
+      "temperature": 55,
+      "windSpeed": 66,
+      "windDirection": 77,
+      "pressure": 88,
       "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
-      "_id": "c0f56792-4dd5-44fc-b049-ab464e0cd832"
+      "_id": "2843a1b7-bbf1-46e1-ab11-ca7f986df49b"
+    },
+    {
+      "code": 100,
+      "temperature": 2,
+      "windSpeed": 2,
+      "windDirection": 2,
+      "pressure": 2,
+      "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
+      "_id": "7f040d58-7aff-4a6a-b5f7-78ecb3044cfc"
+    },
+    {
+      "code": 400,
+      "temperature": 8,
+      "windSpeed": 345,
+      "windDirection": 555,
+      "pressure": 666,
+      "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
+      "_id": "cf4c9296-21fc-4a17-be03-36cf06c04c5f"
     },
     {
       "code": 800,
-      "temperature": 12,
-      "windSpeed": 12,
-      "windDirection": 12,
-      "pressure": 12,
-      "station_id": "b52ef808-8cbd-45d3-926e-321818112a43",
-      "_id": "2193f828-6fdd-4841-a309-231ba6fa3d01"
+      "temperature": null,
+      "windSpeed": null,
+      "windDirection": null,
+      "pressure": null,
+      "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
+      "_id": "458b753c-a5cc-4fab-9bae-94afe404e918"
     },
     {
-      "code": 500,
-      "temperature": 2,
-      "windSpeed": 3,
-      "windDirection": 2,
-      "pressure": 2,
-      "station_id": "aa0aedae-b456-4b11-b94b-83583a5be6d0",
-      "_id": "435af8c3-f5db-44bc-b530-c8a3653a1d4b"
+      "code": 200,
+      "temperature": 8,
+      "windSpeed": 8,
+      "windDirection": 88,
+      "pressure": 888,
+      "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
+      "_id": "2dc3c9dc-58c4-47dc-8643-957bd2c9f4d0"
+    },
+    {
+      "code": 100,
+      "temperature": 23,
+      "windSpeed": 55,
+      "windDirection": 100,
+      "pressure": 12,
+      "station_id": "c356b3f4-9301-4bab-8f08-cd9be8908ffc",
+      "_id": "c684bc8f-058f-43fb-b3a9-84b9e97dd668"
     }
   ]
 }

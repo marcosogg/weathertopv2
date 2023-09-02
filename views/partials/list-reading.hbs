@@ -58,25 +58,48 @@
     }
 </style>
 <div class="card-container">
-    <div class="card">
-        <div class="card-title">Station</div>
-        {{station.title}}
+    <div class="card card-station">
+        {{!-- <div class="card-title">Station</div> --}}
+        <ul class="station-block">
+            <li>{{station.title}}</li>
+            <li>Lat: {{station.latitude}}</li>
+            <li>Lng: {{station.longitude}}</li>
+        </ul>
+        <i class="fa fa-map-marker-alt"></i>
     </div>
-    <div class="card">
+    <div class="card card-station">
         <div class="card-title">Weather</div>
         {{last_reading.codeText}}
+        <i class="{{last_reading.icon}}"></i>
     </div>
-    <div class="card">
+    <div class="card card-station">
         <div class="card-title">Temperature</div>
         {{last_reading.temperature}}°C / {{last_reading.temperatureFahrenheit}}°F
+        <br>
+        Max: {{last_reading.maxTemperature}}
+        <br>
+        Min: {{last_reading.minTemperature}}
+        <br>
+        <i class="fa fa-thermometer-half"></i>
     </div>
-    <div class="card">
-        <div class="card-title">Wind Direction</div>
-        {{last_reading.windDirection}} bft
+    <div class="card card-station">
+        <div class="card-title">Wind</div>
+        bft: {{last_reading.beaufort}}
+        <br>
+        Direction: {{last_reading.windDirectionCompass}}
+        <br>
+        Feels Like: {{last_reading.fellsLike}}
+        <br>
+        Max: {{last_reading.maxWind}}
+        <br>
+        Min: {{last_reading.minwind}}
+        <br>
+        <i class="fa fa-flag"></i>
     </div>
-    <div class="card">
+    <div class="card card-station">
         <div class="card-title">Pressure</div>
         {{last_reading.pressure}} hpa
+        <i class="fa fa-weight-hanging"></i>
     </div>
 </div>
 <div class="table-container">

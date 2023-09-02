@@ -1,7 +1,10 @@
 {{#each stations}}
-<div class="box box-link-hover-shadow">
+<div class="box box-link-hover-shadow box-flex-row">
   <h2 class="title">
-<a href="/dashboard/addreading/{{_id}}">{{title}}</a>
+    {{title}}
   </h2>
+  <a href="/dashboard/addreading/{{_id}}" class="button is-link">
+    New Listing
+  </a>
 </div>
 {{/each}}

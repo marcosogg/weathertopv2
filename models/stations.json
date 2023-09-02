@@ -3,15 +3,15 @@
   "stations": [
     {
       "title": "Dublin",
-      "_id": "b90375ad-a507-45ca-87ba-ff097d49420c"
+      "_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
+      "latitude": -23.5383,
+      "longitude": -46.6368
     },
     {
       "title": "Cork",
-      "_id": "b52ef808-8cbd-45d3-926e-321818112a43"
-    },
-    {
-      "title": "Mayo",
-      "_id": "aa0aedae-b456-4b11-b94b-83583a5be6d0"
+      "_id": "c356b3f4-9301-4bab-8f08-cd9be8908ffc",
+      "latitude": -23.5383,
+      "longitude": -46.6368
     }
   ]
 }
