@@ -20,49 +20,40 @@
       "_id": "2843a1b7-bbf1-46e1-ab11-ca7f986df49b"
     },
     {
-      "code": 100,
+      "code": 300,
+      "temperature": 17,
+      "windSpeed": 12,
+      "windDirection": 33,
+      "pressure": 16,
+      "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
+      "_id": "da20500f-8cc7-4733-ba6d-4361705f2975"
+    },
+    {
+      "code": 300,
       "temperature": 2,
-      "windSpeed": 2,
-      "windDirection": 2,
-      "pressure": 2,
+      "windSpeed": 3,
+      "windDirection": 4,
+      "pressure": 5,
       "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
-      "_id": "7f040d58-7aff-4a6a-b5f7-78ecb3044cfc"
+      "_id": "9b98501d-3f2c-4cb4-bff3-d4073080e190"
     },
     {
-      "code": 400,
-      "temperature": 8,
-      "windSpeed": 345,
-      "windDirection": 555,
-      "pressure": 666,
-      "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
-      "_id": "cf4c9296-21fc-4a17-be03-36cf06c04c5f"
-    },
-    {
-      "code": 800,
+      "code": null,
       "temperature": null,
       "windSpeed": null,
       "windDirection": null,
-      "pressure": null,
+      "pressure": 3,
       "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
-      "_id": "458b753c-a5cc-4fab-9bae-94afe404e918"
+      "_id": "faab5390-f95f-4377-85ea-11a61e52d164"
     },
     {
-      "code": 200,
-      "temperature": 8,
-      "windSpeed": 8,
-      "windDirection": 88,
-      "pressure": 888,
-      "station_id": "b90375ad-a507-45ca-87ba-ff097d49420c",
-      "_id": "2dc3c9dc-58c4-47dc-8643-957bd2c9f4d0"
-    },
-    {
-      "code": 100,
-      "temperature": 23,
-      "windSpeed": 55,
-      "windDirection": 100,
-      "pressure": 12,
-      "station_id": "c356b3f4-9301-4bab-8f08-cd9be8908ffc",
-      "_id": "c684bc8f-058f-43fb-b3a9-84b9e97dd668"
+      "code": 300,
+      "temperature": 14,
+      "windSpeed": 21,
+      "windDirection": 19,
+      "pressure": 13,
+      "station_id": "359bcb37-16a6-4d9c-a66e-6d9716a29817",
+      "_id": "3d7210ad-8794-4719-8cff-6e609d021803"
     }
   ]
 }

@@ -92,15 +92,20 @@
         <br>
         Max: {{last_reading.maxWind}}
         <br>
-        Min: {{last_reading.minwind}}
+        Min: {{last_reading.minWind}}
         <br>
         <i class="fa fa-flag"></i>
     </div>
     <div class="card card-station">
-        <div class="card-title">Pressure</div>
-        {{last_reading.pressure}} hpa
-        <i class="fa fa-weight-hanging"></i>
-    </div>
+    <div class="card-title">Pressure</div>
+    {{last_reading.pressure}} hpa
+    <br>
+    Max: {{last_reading.maxPressure}}
+    <br>
+    Min: {{last_reading.minPressure}}
+    <br>
+    <i class="fa fa-weight-hanging"></i>
+</div>
 </div>
 <div class="table-container">
     <table class="weather-table">

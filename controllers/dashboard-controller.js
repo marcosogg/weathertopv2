@@ -1,7 +1,10 @@
+// Import necessary modules for station and reading models
 import { station } from "../models/station.js";
 import { reading } from "../models/reading.js";
 
+// Convert wind speed to Beaufort scale
 function windSpeedToBeaufort(windSpeed) {
+  // Define the scales with Beaufort and label information
   const scales = {
     1: { beaufort: 0, label: 'Calm' },
     5: { beaufort: 1, label: 'Light Air' },
@@ -16,50 +19,45 @@ function windSpeedToBeaufort(windSpeed) {
     102: { beaufort: 10, label: 'Strong Storm' },
     117: { beaufort: 11, label: 'Violent Storm' }
   }
-
+  // Check if the wind speed exists in the scale
   if (Object.keys(scales).includes(windSpeed)) {
     return scales[windSpeed];
   }
+  // Return 'N/A' if wind speed is out of scale
   return { beaufort: 'N/A', label: 'Out of scale' }
 }
-
+// Function to convert wind direction to compass direction
 const getWindDirectionCompass = (windSpeed) => {
-  if(windSpeed >= 11.25 && windSpeed <= 33.75){
-    return 'NNE'
-  }else if(windSpeed >= 33.75 && windSpeed <= 56.25){
-    return 'NE'
-  }else if(windSpeed  >= 56.25 && windSpeed <= 78.75){
-    return 'ENE'
-  }else if(windSpeed  >= 78.75 && windSpeed <= 101.25){
-    return 'E'
-  }else if(windSpeed  >= 101.25 && windSpeed <= 123.75){
-    return 'ESE'
-  }else if(windSpeed  >= 123.75 && windSpeed <= 146.25){
-    return 'SE'
-  }else if(windSpeed  >= 146.25 && windSpeed <= 168.75){
-    return 'SSE'
-  }else if(windSpeed  >= 168.75 && windSpeed <= 191.25){
-    return 'S'
-  }else if(windSpeed  >= 191.25 && windSpeed <= 213.75){
-    return 'SSW'
-  }else if(windSpeed  >= 213.75 && windSpeed <= 236.25){
-    return 'SW'
-  }else if(windSpeed  >= 236.25 && windSpeed <= 258.75){
-    return 'WSW'
-  }else if(windSpeed  >= 258.75 && windSpeed <= 281.25){
-    return 'W'
-  }else if(windSpeed  >= 281.25 && windSpeed <= 303.75){
-    return 'WNW'
-  }else if(windSpeed  >= 303.75 && windSpeed <= 326.25){
-    return 'NW'
-  }else if(windSpeed  >= 326.25 && windSpeed <= 348.75){
-    return 'NNW'
-  }else if(windSpeed <= 348.75 && windSpeed >= 11.25){
-    return 'N'
+  const directions = [
+    { min: 11.25, max: 33.75, label: 'North-Northeast' },
+    { min: 33.75, max: 56.25, label: 'Northeast' },
+    { min: 56.25, max: 78.75, label: 'East-Northeast' },
+    { min: 78.75, max: 101.25, label: 'East' },
+    { min: 101.25, max: 123.75, label: 'East-Southeast' },
+    { min: 123.75, max: 146.25, label: 'Southeast' },
+    { min: 146.25, max: 168.75, label: 'South-Southeast' },
+    { min: 168.75, max: 191.25, label: 'South' },
+    { min: 191.25, max: 213.75, label: 'South-Southwest' },
+    { min: 213.75, max: 236.25, label: 'Southwest' },
+    { min: 236.25, max: 258.75, label: 'West-Southwest' },
+    { min: 258.75, max: 281.25, label: 'West' },
+    { min: 281.25, max: 303.75, label: 'West-Northwest' },
+    { min: 303.75, max: 326.25, label: 'Northwest' },
+    { min: 326.25, max: 348.75, label: 'North-Northwest' }
+  ];
+// Loop through the defined directions to find the matching label
+  for (const direction of directions) {
+    if (windSpeed >= direction.min && windSpeed <= direction.max) {
+      return direction.label;
+    }
   }
-}
+// Return 'Invalid' if wind speed is not within defined directions
+  return 'Invalid wind speed';
+};
 
+// Export dashboard controller with methods to handle various requests
 export const dashboardController = {
+  // Async function to display dashboard index
   async index(request, response) {
     const viewData = {
       title: "Station Dashboard",
@@ -68,7 +66,7 @@ export const dashboardController = {
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);
   },
-
+  // Async function to add a new station
   async addStation(request, response) {
     const newStation = {
       title: request.body.title,
@@ -79,15 +77,20 @@ export const dashboardController = {
     await station.addStation(newStation);
     response.redirect("/dashboard");
   },
+
+  // Async function to render form for adding readings
   async addReadingForm(request, response) {
     const station_id = request.params.stationId
     let maxTemperature = null;
     let minTemperature = null;
     let maxWind = null;
-    let minwind = null;
+    let minWind = null;
+    let maxPressure = null;
+    let minPressure = null;
 
     let readings = await reading.getAllReadings(station_id)
     readings = readings.map((item) => {
+      // Transform readings according to conditions (code, temperature, etc.)
       switch (item.code) {
         case 100:
           item.codeText = 'Clear';
@@ -142,9 +145,15 @@ export const dashboardController = {
       if (item.windSpeed > maxWind || maxWind == null) {
         maxWind = item.windSpeed
       }
-      if (item.windSpeed < minwind || minwind == null) {
-        minwind = item.windSpeed
+      if (item.windSpeed < minWind || minWind == null) {
+        minWind = item.windSpeed
       }
+      if (item.pressure > maxPressure || maxPressure == null) {
+        maxPressure = item.pressure;
+      }
+      if (item.pressure < minPressure || minPressure == null) {
+        minPressure = item.pressure;
+      }      
       return item;
     }); 
 
@@ -159,13 +168,16 @@ export const dashboardController = {
         maxTemperature: maxTemperature,
         minTemperature: minTemperature,
         maxWind: maxWind,
-        minwind: minwind
+        minWind: minWind,
+        maxPressure: maxPressure,
+        minPressure: minPressure
       },
       station: await station.getStationById(station_id),
       station_id
     };
     response.render("form-reading", viewData);
   },
+  // Async function to add a new reading
   async addReading(request, response) {
     const station_id = request.body.station_id
     const newReading = {

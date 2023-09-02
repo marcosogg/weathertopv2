@@ -12,6 +12,12 @@
       "_id": "c356b3f4-9301-4bab-8f08-cd9be8908ffc",
       "latitude": -23.5383,
       "longitude": -46.6368
+    },
+    {
+      "title": "Galway",
+      "latitude": "4",
+      "longitude": "-6",
+      "_id": "359bcb37-16a6-4d9c-a66e-6d9716a29817"
     }
   ]
 }
